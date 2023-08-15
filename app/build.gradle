@@ -1,0 +1,157 @@
+plugins {
+    id "com.android.application"
+    id "org.jetbrains.kotlin.android"
+}
+
+android {
+    namespace "vinx.abverterx.ripplelua.core"
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "vinx.abverterx.ripplelua.core"
+        minSdk 21
+        targetSdk 34
+        versionCode 1
+        versionName "Preview 1.0"
+    }
+
+    signingConfigs {
+        release {
+            storeFile file("abv.jks")
+            storePassword "Vtx-0987"
+            keyAlias "ABVerterX"
+            keyPassword "Vtx-0987"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            signingConfig signingConfigs.release
+        }
+        debug {
+            signingConfig signingConfigs.release
+        }
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ["libs"]
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = "11"
+    }
+    externalNativeBuild {
+        ndkBuild  {
+            path "src/main/jni/Android.mk"
+        }
+    }
+    buildFeatures {
+        viewBinding true
+    }
+    ndkVersion "25.0.8775105"
+
+}
+
+
+dependencies {
+    api "org.jetbrains.kotlin:kotlin-stdlib:1.8.22"
+
+    api "androidx.activity:activity:1.6.1"
+    api "androidx.appcompat:appcompat:1.6.1"
+    api "androidx.fragment:fragment-ktx:1.6.1"
+    api "com.google.android.material:material:1.11.0-alpha01"
+    api "androidx.navigation:navigation-fragment:2.5.3"
+    api "androidx.navigation:navigation-ui:2.5.3"
+    api "androidx.paging:paging-runtime-ktx:3.2.0"
+    api "androidx.window:window:1.0.0"
+    api "androidx.window:window-java:1.0.0"
+    api "androidx.datastore:datastore-preferences:1.0.0"
+    api "androidx.core:core-ktx:1.10.1"
+    api "androidx.core:core-role:1.0.0"
+    api "androidx.core:core-animation:1.0.0-beta01"
+//    api "androidx.core:core-google-shortcuts:1.1.0"
+    api "androidx.core:core-remoteviews:1.0.0-beta03"
+    api "androidx.core:core-splashscreen:1.0.1"
+    api "androidx.dynamicanimation:dynamicanimation:1.0.0"
+    api "androidx.interpolator:interpolator:1.0.0"
+    api "androidx.palette:palette:1.0.0"
+    api "androidx.transition:transition:1.4.1"
+    api "androidx.exifinterface:exifinterface:1.3.6"
+    api "androidx.drawerlayout:drawerlayout:1.1.1"
+    api "androidx.privacysandbox.tools:tools:1.0.0-alpha03"
+    api "androidx.cardview:cardview:1.0.0"
+    api "androidx.constraintlayout:constraintlayout:2.2.0-alpha07"
+    api "androidx.coordinatorlayout:coordinatorlayout:1.2.0"
+    api "androidx.draganddrop:draganddrop:1.0.0"
+    api "androidx.graphics:graphics-core:1.0.0-alpha02"
+    api "androidx.gridlayout:gridlayout:1.0.0"
+    api "androidx.recyclerview:recyclerview:1.2.1"
+    api "androidx.recyclerview:recyclerview-selection:1.1.0"
+    api "androidx.slidingpanelayout:slidingpanelayout:1.2.0"
+    api "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+    api "androidx.viewpager:viewpager:1.1.0-alpha01"
+    api "androidx.viewpager2:viewpager2:1.0.0"
+    api "androidx.webkit:webkit:1.6.0"
+    api "androidx.ads:ads-identifier:1.0.0-alpha04"
+    api "androidx.annotation:annotation:1.6.0"
+    api "androidx.preference:preference:1.2.0"
+    api "androidx.autofill:autofill:1.1.0"
+    api "androidx.browser:browser:1.5.0"
+    api "androidx.documentfile:documentfile:1.0.1"
+
+    api "com.hendraanggrian.material:collapsingtoolbarlayout-subtitle:1.5.0"
+
+    api "androidx.lifecycle:lifecycle-extensions:2.2.0"
+    api "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1"
+
+    def appsearch_version = "1.1.0-alpha02"
+    api "androidx.appsearch:appsearch:$appsearch_version"
+    api "androidx.appsearch:appsearch-local-storage:$appsearch_version"
+    api "androidx.appsearch:appsearch-platform-storage:$appsearch_version"
+
+    def emoji2_version = "1.3.0"
+    api "androidx.emoji2:emoji2:$emoji2_version"
+    api "androidx.emoji2:emoji2-views:$emoji2_version"
+    api "androidx.emoji2:emoji2-views-helper:$emoji2_version"
+
+    api "me.zhanghai.android.fastscroll:library:1.2.0"
+    api "me.zhanghai.android.appiconloader:appiconloader-coil:1.5.0"
+    api "me.zhanghai.android.materialratingbar:library:1.4.0"
+    api "me.zhanghai.android.foregroundcompat:library:1.0.2"
+
+    api "io.coil-kt:coil:2.3.0"
+    api "io.coil-kt:coil-base:2.3.0"
+    api "io.coil-kt:coil-gif:2.3.0"
+    api "io.coil-kt:coil-svg:2.3.0"
+    api "io.coil-kt:coil-video:2.3.0"
+
+    api platform("io.github.Rosemoe.sora-editor:bom:0.21.1")
+    api "io.github.Rosemoe.sora-editor:editor"
+    api "io.github.Rosemoe.sora-editor:editor-lsp"
+    api "io.github.Rosemoe.sora-editor:language-textmate"
+
+    api "com.airbnb.android:lottie:6.0.0"
+    api "com.github.bumptech.glide:glide:4.15.1"
+    api "com.drakeet.drawer:drawer:1.0.3"
+    api "com.github.chrisbanes:PhotoView:2.3.0"
+    api "com.leinardi.android:speed-dial:3.3.0"
+    api "com.faltenreich:skeletonlayout:4.0.0"
+
+//    api "com.github.Justson.AgentWeb:agentweb-core:v5.0.6-androidx"
+//    api "com.github.Justson.AgentWeb:agentweb-filechooser:v5.0.6-androidx"
+//    api "com.github.Justson:Downloader:v5.0.4-androidx"
+
+    api "dev.rikka.rikkax.buildcompat:buildcompat:34.0.1"
+    api "dev.rikka.rikkax.compatibility:compatibility:2.0.0"
+//    api "dev.rikka.rikkax.material:material-preference:2.0.0"
+    api "dev.rikka.rikkax.preference:simplemenu-preference:1.0.3"
+
+    api "com.google.android.flexbox:flexbox:3.0.0"
+
+    api "com.github.StephenVinouze:MaterialNumberPicker:1.0.5"
+}

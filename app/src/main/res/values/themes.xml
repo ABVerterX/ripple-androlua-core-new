@@ -1,0 +1,47 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.RippleLuaCore" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="ThemeOverlay.RippleLuaCore.IconButton" parent="Theme.MaterialComponents.DayNight">
+        <item name="materialIconButtonFilledStyle">@style/Widget.MaterialComponents.Button.IconButton.Filled</item>
+        <item name="materialIconButtonFilledTonalStyle">@style/Widget.MaterialComponents.Button.IconButton.Colored</item>
+        <item name="materialIconButtonOutlinedStyle">@style/Widget.MaterialComponents.Button.IconButton.Outlined</item>
+        <item name="materialIconButtonStyle">@style/Widget.MaterialComponents.Button.IconButton</item>
+    </style>
+
+    <style name="Widget.MaterialComponents.Button.IconButton" parent="Widget.Material3.Button.IconButton">
+        <item name="iconTint">@color/mtrl_navigation_bar_item_tint</item>
+        <item name="rippleColor">@color/mtrl_on_surface_ripple_color</item>
+        <item name="backgroundTint">@android:color/transparent</item>
+<!--        <item name="android:background">@android:drawable/control_background_40dp_material</item>-->
+    </style>
+
+    <style name="Widget.MaterialComponents.Button.IconButton.Filled" parent="Widget.Material3.Button.IconButton.Filled">
+        <item name="iconTint">@color/mtrl_btn_text_color_selector</item>
+        <item name="rippleColor">@color/mtrl_btn_ripple_color</item>
+        <item name="backgroundTint">@color/mtrl_btn_bg_color_selector</item>
+    </style>
+
+    <style name="Widget.MaterialComponents.Button.IconButton.Colored" parent="Widget.Material3.Button.IconButton.Filled.Tonal">
+        <item name="iconTint">@color/mtrl_text_btn_text_color_selector</item>
+        <item name="rippleColor">@color/mtrl_btn_text_btn_ripple_color</item>
+        <item name="backgroundTint">@color/mtrl_btn_text_btn_bg_color_selector</item>
+    </style>
+
+    <style name="Widget.MaterialComponents.Button.IconButton.Outlined" parent="Widget.MaterialComponents.Button.IconButton.Colored">
+        <item name="strokeColor">@color/mtrl_btn_stroke_color_selector</item>
+        <item name="strokeWidth">@dimen/mtrl_btn_stroke_size</item>
+    </style>
+</resources>
